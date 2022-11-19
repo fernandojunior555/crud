@@ -1,0 +1,11 @@
+.button {
+    text-transform: lowercase;
+    font-weight: 500;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+
+  .button-primay {
+      background-color: rgb(50, 139, 218);
+      border-color: black;
+  }

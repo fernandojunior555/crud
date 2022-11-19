@@ -60,7 +60,7 @@
                     <a href="cadastro.html" class="btn button-primary btn-primary"> COMECE JA</a>
                     </div>
                    <div class="col-md-8 align-self-center text-center">
-                       <img src="img/homeimgpp.png" class="img-fluid" />
+                       <img src="img/homeimgp.png" alt="" srcset="">
                    </div>
                </div>
            </div>
