@@ -8,7 +8,7 @@
     <br><br>
     <form action="" method="get">
         <fieldset>
-        <legend>Consulta de Atleta</legend>
+        <legend>Consultar Tarefas</legend>
 
         <div class="row align-items-end">
             <div class="col-3">
@@ -28,10 +28,9 @@
     <thead>
         <tr class='table-titulo'>
             <th>Código</th>
-            <th>Nome</th>
-            <th>Peso (kg)</th> 
-            <th>Altura (m)</th>
-            <th>IMC</th>   
+            <th>Tarefa</th>
+            <th>Data (y-m-d)</th> 
+            <th>Descricao</th>  
             <th>Detalhes</th>
             <th>Editar</th>
             <th>Excluir</th>
@@ -45,31 +44,16 @@
     $consulta=$conexao->query("SELECT * FROM tarefa where tarefa like '$filtro%';");
     
     while($linha=$consulta->fetch(PDO::FETCH_ASSOC)){
-        $conta = $linha["data"] / ($linha["descricao"] * $linha["descricao"]);
-        if($conta > 35){
-            echo "<tr>
-                   <td>{$linha['codigo']}</td>
-                   <td>{$linha['nome']}</td>
-                   <td>{$linha['peso']}</td>
-                   <td>{$linha['altura']}</td>
-                   <td style='color:red'>".round($conta, $precision = 2)."</td>
-                   <td><a class='btn btn-info' href='show.php?codigo={$linha['codigo']}'>Detalhes</a></td>
-                   <td><a class='btn btn-warning' href='cad.php?acao=editar&codigo={$linha['codigo']}'>Editar</a></td>
-                   <td><a class='btn btn-danger' onClick = 'return excluir();' href='acao.php?acao=excluir&codigo={$linha['codigo']}'.>Excluir</a></td>
-                  </tr>\n";
-        }else{
             echo "<tr>
                     <td>{$linha['codigo']}</td>
-                    <td>{$linha['nome']}</td>
-                    <td>{$linha['peso']}</td>
-                    <td>{$linha['altura']}</td>
-                    <td>".round($conta, $precision = 2)."</td>
-                    <td><a class='btn btn-info' href='show.php?codigo={$linha['codigo']}'>Detalhes</a></td>
-                    <td><a class='btn btn-warning' href='cad.php?acao=editar&codigo={$linha['codigo']}'>Editar</a></td>
-                    <td><a class='btn btn-danger' onClick = 'return excluir();' href='acao.php?acao=excluir&codigo={$linha['codigo']}'.>Excluir</a></td>
+                    <td>{$linha['tarefa']}</td>
+                    <td>{$linha['data']}</td>
+                    <td>{$linha['descricao']}</td>
+                    <td><a class='btn btn-outline-success' href='show.php?codigo={$linha['codigo']}'>Detalhes</a></td>
+                    <td><a class='btn btn-outline-warning' href='cad.php?acao=editar&codigo={$linha['codigo']}'>Editar</a></td>
+                    <td><a class='btn btn-outline-info' onClick = 'return excluir();' href='acao.php?acao=excluir&codigo={$linha['codigo']}'.>Excluir</a></td>
                   </tr>\n";
         }
-    }
 ?>
 </tbody>
 </table>

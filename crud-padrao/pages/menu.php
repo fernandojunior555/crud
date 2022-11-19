@@ -20,7 +20,7 @@
           <a class="nav-link active" href="<?=URL_BASE.'/pages'?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="<?=URL_BASE.'pages/atleta/'?>">Atleta</a>
+          <a class="nav-link active" href="<?=URL_BASE.'pages/atleta/'?>">Tarefas</a>
         </li>
       </ul>
     </div>

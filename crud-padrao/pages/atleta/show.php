@@ -15,11 +15,10 @@
     $consulta=$conexao->query("SELECT*FROM tarefa WHERE codigo = $codigo");
     
     while($linha=$consulta->fetch(PDO::FETCH_ASSOC)){
-        $imc = $linha["peso"] / ($linha["altura"] * $linha["altura"]);
         echo "<div class='card-body'>";
         echo "<div class='card-header'>Código:".$linha["codigo"]."</div>";
-        echo "<h5 class='card-title'>Nome: ".$linha["nome"]."</h5>";
-        echo "<p class='card-text'>Peso: ".$linha["peso"]."Kg <br>Altura: ".$linha["altura"]."m<br> IMC: ".round($imc, $precision = 2)."</p>";
+        echo "<h5 class='card-title'>Tarefa: ".$linha["tarefa"]."</h5>";
+        echo "<p class='card-text'>Data: ".$linha["data"]." <br>Descricao: ".$linha["descricao"]."<br> </p>";
         echo "<a class='btn btn-danger' onClick='return excluir();' href='acao.php?acao=excluir&codigo=".$linha['codigo']."'.>Excluir</a>";
         echo "&nbsp;&nbsp";
         echo "<a class='btn btn-warning' href='cad.php?acao=excluir&codigo=".$linha['codigo']."'.>Editar</a>";

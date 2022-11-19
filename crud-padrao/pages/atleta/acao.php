@@ -22,7 +22,7 @@ switch($acao){
 function excluir(){    
     $codigo = isset($_GET['codigo']) ? $_GET['codigo']: 0;
     $conexao = Conexao::getInstance();
-    $stmt = $conexao->prepare("DELETE FROM atleta where codigo = :codigo");
+    $stmt = $conexao->prepare("DELETE FROM tarefa where codigo = :codigo");
     $stmt->bindParam('codigo', $codigo, PDO::PARAM_INT);
     $stmt->execute();
     header("location:index.php");
@@ -30,7 +30,7 @@ function excluir(){
 
 function findById($codigo){
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("SELECT * FROM atleta WHERE codigo = $codigo;");
+    $conexao = $conexao->query("SELECT * FROM tarefa WHERE codigo = $codigo;");
     $result= $conexao->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
@@ -38,21 +38,21 @@ function findById($codigo){
 function editar(){
     echo "editar";
     $codigo = isset($_POST['codigo']) ? $_POST['codigo']: 0;
-    $nome = isset($_POST['nome']) ? $_POST['nome']: 0;
-    $peso = isset($_POST['peso']) ? $_POST['peso']: 0;
-    $altura = isset($_POST['altura']) ? $_POST['altura']: 0;
+    $tarefa = isset($_POST['tarefa']) ? $_POST['tarefa']: 0;
+    $data = isset($_POST['data']) ? $_POST['data']: 0;
+    $descricao = isset($_POST['descricao']) ? $_POST['descricao']: 0;
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("UPDATE atleta SET nome = '$nome',peso = '$peso', altura = '$altura' WHERE codigo = '$codigo'");
+    $conexao = $conexao->query("UPDATE tarefa SET tarefa = '$tarefa', data = '$data', descricao = '$descricao' WHERE codigo = '$codigo'");
     header("location:index.php");
 }
 
 function salvar(){
     echo "salvar";
-    $nome = isset($_POST['nome']) ? $_POST['nome']: 0;
-    $peso = isset($_POST['peso']) ? $_POST['peso']: 0;
-    $altura = isset($_POST['altura']) ? $_POST['altura']: 0;
+    $tarefa = isset($_POST['tarefa']) ? $_POST['tarefa']: 0;
+    $data = isset($_POST['data']) ? $_POST['data']: 0;
+    $descricao = isset($_POST['descricao']) ? $_POST['descricao']: 0;
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("INSERT INTO atleta (nome, peso, altura) VALUES ('$nome', $peso, $altura);");
+    $conexao = $conexao->query("INSERT INTO tarefa (tarefa, data, descricao) VALUES ('$tarefa', '$data', '$descricao');");
     header("location:index.php");
 }
 

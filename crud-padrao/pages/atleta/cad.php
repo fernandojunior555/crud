@@ -16,7 +16,7 @@
 
 <form action="acao.php" method="post">
     <fieldset>
-        <legend>Cadastro de Atleta</legend>
+        <legend>Cadastro de Tarefas</legend>
         <div class="row">
             <div class="col-2">
                 <label class="form-label" for="codigo">Código</label>
@@ -25,18 +25,18 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <label class="form-label" for="nome">Nome</label>
-                <input class="form-control" type="text" name="nome" id="nome" placeholder="Informe seu nome" value="<?php if($acao == 'editar') echo $dados['nome']; ?>" required>
+                <label class="form-label" for="tarefa">Tarefa :</label>
+                <input class="form-control" type="text" name="nome" id="nome" placeholder="nome da tarefa" value="<?php if($acao == 'editar') echo $dados['tarefa']; ?>" required>
             </div>
         </div>
         <div class="row">
             <div class="col-2">
-                <label class="form-label" for="peso">Peso (kg)</label>
-                <input class="form-control" type="text" name="peso" id="peso" placeholder="78.5" value="<?php if($acao == 'editar') echo $dados['peso']; ?>"required>
+                <label class="form-label" for="data">Data (y-m-d)</label>
+                <input class="form-control" type="text" name="data" id="data" placeholder="2022-01-01" value="<?php if($acao == 'editar') echo $dados['data']; ?>"required>
             </div>
             <div class="col-2">
-                <label class="form-label" for="altura">Altura (m)</label>
-                <input class="form-control" type="text" name="altura" id="altura" placeholder="1.78" value="<?php if($acao == 'editar') echo $dados['altura']; ?>" required>
+                <label class="form-label" for="descricao">Descricao</label>
+                <input class="form-control" type="text" name="descricao" id="descricao" placeholder="Trabalho pagina 25 e 29" value="<?php if($acao == 'editar') echo $dados['descricao']; ?>" required>
             </div>    
         </div>
         <br>
