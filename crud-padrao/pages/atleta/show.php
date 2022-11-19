@@ -21,7 +21,7 @@
         echo "<p class='card-text'>Data: ".$linha["data"]." <br>Descricao: ".$linha["descricao"]."<br> </p>";
         echo "<a class='btn btn-danger' onClick='return excluir();' href='acao.php?acao=excluir&codigo=".$linha['codigo']."'.>Excluir</a>";
         echo "&nbsp;&nbsp";
-        echo "<a class='btn btn-warning' href='cad.php?acao=excluir&codigo=".$linha['codigo']."'.>Editar</a>";
+        echo "<a class='btn btn-warning' href='cad.php?acao=editar&codigo=".$linha['codigo']."'.>Editar</a>";
     }
 ?>  
 </div>
