@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="<?=URL_BASE.'/assets/css/estilo.css'?>">
     <script src="<?=URL_BASE.'/assets/js/script.js'?>"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/1.css">
+    <link rel="stylesheet" href="../assets/css/1.css">
+    
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
