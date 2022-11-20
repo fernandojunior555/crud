@@ -1,5 +1,7 @@
+
 .table-titulo{
-    background-color: #64069b;
+    background-color: #ecca08;
+    
 }
 
 .img-center {
@@ -8,3 +10,9 @@
     margin-right: auto;
     width: 50%;
   }
+
+
+.table{
+    margin: auto;
+    width: 90%;
+}

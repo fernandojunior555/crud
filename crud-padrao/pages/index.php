@@ -14,7 +14,7 @@
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
                   <a class="navbar-brand" href="img-fluid">
-                    <img src="img/lista-de-tarefas.png" width="50" class="img-fluid"  />
+                    <img src="../assets/img/lista.png" width="50" class="img-fluid"  />
               </a>
               
             
@@ -31,6 +31,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
+              <li class="nav-item">
+          <a class="nav-link active" href="<?=URL_BASE.'/pages'?>">Home</a>
+            </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="sobrenos.html">
                     Sobre Nos</a>
@@ -42,6 +45,10 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="<?=URL_BASE.'pages/tarefas/'?>">Tarefas</a>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -57,10 +64,10 @@
                    <div class="col-md-4 align-self-center text-left"> 
                     <h1>VOCE DESEJA UM OTIMO GERENCIADOR PARA SUAS TAREFAS?</h1>
                     <H3>Deixar em ordem suas tarefas e compromissos nunca foi tao facil!!</H3>
-                    <a href="cadastro.html" class="btn button-primary btn-primary"> COMECE JA</a>
+                    <a href="cadastro.html" class="btn btn-warning"> COMECE JA</a>
                     </div>
                    <div class="col-md-8 align-self-center text-center">
-                       <img src="img/homeimgp.png" alt="" srcset="">
+                       <img src="../assets/img/home.png" alt="" srcset="">
                    </div>
                </div>
            </div>

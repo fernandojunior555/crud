@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-4">
                 <label class="form-label" for="tarefa">Tarefa :</label>
-                <input class="form-control" type="text" name="nome" id="nome" placeholder="nome da tarefa" value="<?php if($acao == 'editar') echo $dados['tarefa']; ?>" required>
+                <input class="form-control" type="text" name="tarefa" id="tarefa" placeholder="nome da tarefa" value="<?php if($acao == 'editar') echo $dados['tarefa']; ?>" required>
             </div>
         </div>
         <div class="row">
@@ -42,7 +42,7 @@
         <br>
         <div class="row">
             <div class="col-2">
-                <button class="form-control btn btn-primary" type="submit" value="salvar" name="acao" id="acao">Salvar</button>
+                <button class="btn btn-warning" type="submit" value="salvar" name="acao" id="acao">Salvar</button>
             </div>
         </div>
     </fieldset>
