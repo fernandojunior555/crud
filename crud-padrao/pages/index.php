@@ -50,6 +50,10 @@
                     <a class="nav-link active" href="<?=URL_BASE.'pages/tarefas/'?>">Tarefas</a>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/tipousuario/">Tipo Usuario</a>
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>

@@ -46,6 +46,19 @@ function editar(){
     header("location:index.php");
 }
 
+function formToArray(){
+    $codigo = isset($_POST['codigo']) ? $_POST['codigo']: 0;
+    $descricao = isset($_POST['descricao']) ? $_POST['descricao']: 0;
+
+    $dados = array(
+        'codigo' => $codigo,
+        'descricao' => $descricao,
+    );
+return $dados;
+
+}
+
+
 function salvar(){
     echo "salvar";
     $tarefa = isset($_POST['tarefa']) ? $_POST['tarefa']: 0;
