@@ -54,6 +54,10 @@
                   <a class="nav-link active" href="../pages/tipousuario/">Tipo Usuario</a>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/usuario/">Usuario</a>
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>

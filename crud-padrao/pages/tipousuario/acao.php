@@ -22,7 +22,7 @@ switch($acao){
 function excluir(){    
     $codigo = isset($_GET['codigo']) ? $_GET['codigo']:0;
     $conexao = Conexao::getInstance();
-    $stmt = $conexao->prepare("DELETE FROM tipousuario WHERE codigo = :codigo");
+    $stmt = $conexao->prepare("DELETE * FROM tipousuario WHERE codigo = :codigo");
     $stmt->bindParam('codigo', $codigo, PDO::PARAM_INT);  
     $stmt->execute();
     header("location:index.php");
@@ -38,7 +38,7 @@ function editar(){
 function salvar(){
     $dados = formToArray();
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("INSERT INTO tipousuario (descricao) VALUES ('$dados[descricao]');");
+    $conexao = $conexao->query("INSERT INTO `2info`.`tipousuario` (`descricao`) VALUES ('$dados[descricao]');");
     header("location:index.php");
 }
 

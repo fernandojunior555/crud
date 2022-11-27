@@ -22,41 +22,64 @@ switch($acao){
 function excluir(){    
     $codigo = isset($_GET['codigo']) ? $_GET['codigo']:0;
     $conexao = Conexao::getInstance();
-    $stmt = $conexao->prepare("DELETE FROM tipousuario WHERE codigo = :codigo");
+    $stmt = $conexao->prepare("DELETE FROM usuario WHERE codigo = :codigo");
     $stmt->bindParam('codigo', $codigo, PDO::PARAM_INT);  
     $stmt->execute();
     header("location:index.php");
 }
 
 function editar(){
+    
     $dados = formToArray();
+
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("UPDATE tipousuario SET descricao = '$dados[descricao]' WHERE codigo = $dados[codigo];");
+
+    $sql = "UPDATE usuario SET nome = '".$dados['nome'].
+           "' WHERE codigo = ".$dados['codigo'].";";
+
+    $conexao = $conexao->query($sql);
     header("location:index.php");
 }
 
 function salvar(){
+    
     $dados = formToArray();
+
+    //var_dump($dados);
+
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("INSERT INTO tipousuario (descricao) VALUES ('$dados[descricao]');");
+
+    $sql = "INSERT INTO usuario (nome) 
+            VALUES ('".$dados['nome']."')";
+    
+    $conexao = $conexao->query($sql);
     header("location:index.php");
 }
 
 function formToArray(){
     $codigo = isset($_POST['codigo']) ? $_POST['codigo']: 0;
-    $descricao = isset($_POST['descricao']) ? $_POST['descricao']: 0;
+    $nome = isset($_POST['nome']) ? $_POST['nome']: 0;
+    $user = isset($_POST['user']) ? $_POST['user']: 0;
+    $pass = isset($_POST['pass']) ? $_POST['pass']: 0;
+    $email = isset($_POST['email']) ? $_POST['email']: 0;
+    $tipoUsuario_codigo = isset($_POST['tipoUsuario_codigo']) ? $_POST['tipoUsuario_codigo']: 0;
 
     $dados = array(
         'codigo' => $codigo,
-        'descricao' => $descricao,
+        'nome' => $nome,
+        'user' => $user,
+        'pass' => $pass,
+        'email' => $email
     );
-return $dados;
+
+    return $dados;
 
 }
 
+
 function findById($codigo){
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("SELECT * FROM tipousuario WHERE codigo = $codigo;");
+    $conexao = $conexao->query("SELECT * FROM usuario WHERE codigo = $codigo;");
     $result = $conexao->fetch(PDO::FETCH_ASSOC);
     return $result; 
 }

@@ -16,7 +16,7 @@
 
 <form action="acao.php" method="post">
     <fieldset>
-        <legend>Cadastro de Tarefas</legend>
+        <legend>Cadastro de Tipo de Usuario</legend>
         <div class="row">
             <div class="col-2">
                 <label class="form-label" for="codigo">Código</label>

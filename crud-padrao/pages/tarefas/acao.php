@@ -36,13 +36,16 @@ function findById($codigo){
 }
 
 function editar(){
-    echo "editar";
-    $codigo = isset($_POST['codigo']) ? $_POST['codigo']: 0;
-    $tarefa = isset($_POST['tarefa']) ? $_POST['tarefa']: 0;
-    $data = isset($_POST['data']) ? $_POST['data']: 0;
-    $descricao = isset($_POST['descricao']) ? $_POST['descricao']: 0;
+    
+    $dados = formToArray();
+
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("UPDATE tarefa SET tarefa = '$tarefa', data = '$data', descricao = '$descricao' WHERE codigo = '$codigo'");
+
+    $sql = "UPDATE tarefa SET tarefa = '".$dados['tarefa'].
+           "',data = '".$dados['data']."', descricao = '".$dados['descricao'].
+           "'WHERE codigo = ".$dados['codigo'].";";
+
+    $conexao = $conexao->query($sql);
     header("location:index.php");
 }
 
@@ -60,12 +63,18 @@ return $dados;
 
 
 function salvar(){
-    echo "salvar";
-    $tarefa = isset($_POST['tarefa']) ? $_POST['tarefa']: 0;
-    $data = isset($_POST['data']) ? $_POST['data']: 0;
-    $descricao = isset($_POST['descricao']) ? $_POST['descricao']: 0;
+    
+    $dados = formToArray();
+
+    //var_dump($dados);
+
     $conexao = Conexao::getInstance();
-    $conexao = $conexao->query("INSERT INTO tarefa (tarefa, data, descricao) VALUES ('$tarefa', '$data', '$descricao');");
+
+    $sql = "INSERT INTO tarefa (tarefa, data, descricao) 
+            VALUES ('".$dados['tarefa']."', '".$dados['data']."', 
+            '".$dados['descricao']."')";
+    
+    $conexao = $conexao->query($sql);
     header("location:index.php");
 }
 

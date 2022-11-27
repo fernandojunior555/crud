@@ -17,8 +17,8 @@
     while($linha=$consulta->fetch(PDO::FETCH_ASSOC)){
         echo "<div class='card-body'>";
         echo "<div class='card-header'>Código:".$linha["codigo"]."</div>";
-        echo "<h5 class='card-title'>Tarefa: ".$linha["tarefa"]."</h5>";
-        echo "<p class='card-text'>Data: ".$linha["data"]." <br>Descricao: ".$linha["descricao"]."<br> </p>";
+        echo "<h5 class='card-title'>Nome: ".$linha["nome"]."</h5>";
+        echo "<p class='card-text'>User: ".$linha["user"]." <br>Email: ".$linha["email"]."<br> </p>";
         echo "<a class='btn btn-danger' onClick='return excluir();' href='acao.php?acao=excluir&codigo=".$linha['codigo']."'.>Excluir</a>";
         echo "&nbsp;&nbsp";
         echo "<a class='btn btn-warning' href='cad.php?acao=editar&codigo=".$linha['codigo']."'.>Editar</a>";
